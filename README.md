@@ -32,7 +32,7 @@ where, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">x</s
 <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">B</span> is input matrix, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">C</span> is output matrix.</br></br>
 
                 
-Discrete state space form represented by the following equations: </br>
+Discrete state space form represented by the following equations </br>
 State equation:
 
 $$ {x}[k+1]=F x[k]+g u[k] \tag{2a} $$
