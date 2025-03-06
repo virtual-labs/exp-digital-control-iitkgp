@@ -225,10 +225,10 @@
 			
 			</div>
 			
-			<div class="row my-5 gy-2">
+			<!-- <div class="row my-5 gy-2">
 	        <div class="col-md-12">	</div>
 	        <img  src="./images/SS_Pendulum_Cart.png" style="visibility:hidden;width:30%;height:10%" >
-	        </div>
+	        </div> -->
 			<!--<script>
 			var outputText1;
 			var outputText2;
@@ -278,7 +278,8 @@
 			</div>
 			
 			<br><br><br><br><br><br><br><br>
-			<button class="btn btn-success" id ="run1" onclick="EP()" style="visibility:hidden">Enter the desired pole location </button>				
+			<button class="btn btn-success" id ="newb1" onclick="controlT()" style="visibility:hidden">Check for Controllability</button>
+			<!-- <button class="btn btn-success" id ="run1" onclick="EP()" style="visibility:hidden">Enter the desired pole location </button>				
 			
 			<div id="tfbody11" class="card border-0" style="display:none; width:100%;background-color:none">
 			<br/><br/>
@@ -291,16 +292,16 @@
 			Pole 1 :  P1 = <input type="number" id="np1" min="-500" value="-1" max="0" step="0.05" style="position:absolute;width:25%" ><br/></br>
 			Pole 2 :  P2 = <input type="number" id="np2" min="-500" value="-2" max="0" step="0.05" style="position:absolute;width:25%" ><br/></br>
 			
-			
+			 -->
 						
-			<p id="Pole_Value1"/>
-			<p id="Pole_Value2"/>
+			<!-- <p id="Pole_Value1"/>
+			<p id="Pole_Value2"/> -->
 			
 			
 			</div>
-		<!--	<button class="btn btn-success" id ="run1" onclick="EP()" style="visibility:hidden">Enter the desired pole location</button>				
+			<!-- <button class="btn btn-success" id ="run1" onclick="EP()" style="visibility:hidden">Enter the desired pole location</button>				
 			
-			<div id="tfbody11" class="card border-0" style="display:none; width:100%;background-color:none">
+			<div id="tfbody11" class="card border-0" style="visibility:hidden; width:100%;background-color:none">
 			<br/><br/>
 			<span class="card-text "><b>Note: Poles will be located at the origin for deadbeat </b></span><br/>
 						
@@ -308,51 +309,52 @@
 						
 			Pole 1 :  P1 = <input type="number" id="np1" min="-500" value="0" max="0" step="0.05" style="position:absolute;width:25%" ><br/></br>
 			Pole 2 :  P2 = <input type="number" id="np2" min="-500" value="0" max="0" step="0.05" style="position:absolute;width:25%" ><br/></br>
-		<!--	Pole 3 :  P3 = <input type="number" id="np3" min="-500" value="-3" max="0" step="0.05" style="position:absolute;width:25%" ><br/></br>
-		<!--	Pole 4 :  P4 = <input type="number" id="np4" min="-500" value="-4" max="0" step="0.05" style="position:absolute;width:25%" ><br/></br> 
-			
-						
-			<p id="Pole_Value1"/>
-			<p id="Pole_Value2"/>
-			<!--<p id="Pole_Value3"/>
-			<!-- <p id="Pole_Value4"/> 
-			
-			</div> -->
-            			  
-			
-			</div>
-			<br/>
-			
-			
-			
-			<br/>
-			
-			
-			
-			<!--	<div class="row my-5 gy-2">
-	<div class="col-md-1"></div>
-	<div class="col-md-10">
-	
-			
-			
-				<!--//<button class="btn btn-success" id ="run" onclick="ZOH_mag();ZOH_ph()">ZOH</button>-->
-				<!--<button class="btn btn-success" id ="run" onclick="FOH_fr()">FOH Freq. Resp.</button>-->
-				<!--<button class="btn btn-success" id ="run" onclick="FOH_bode()">FOH bode</button>-->
-				<!--<button class="btn btn-success" id ="run" onclick="FOH_pade1_fr()">FOH pade1 Freq.Resp.</button>-->
-				<!--<button class="btn btn-success" id ="run" onclick="FOH_pade1_bode()">FOH pade1 bode</button>-->
-				<!--<button class="btn btn-success" id ="run" onclick="FOH_pade2_fr()">FOH pade2 Freq.Resp.</button>-->
-				<!--<button class="btn btn-success" id ="run" onclick="FOH_pade2_bode()">FOH pade2 bode</button>-->
-				<!--<button class="btn btn-danger" id ="clr" onclick="refresh()" >Clear</button>-->
-	
-	<!--</div>
-	<div class="col-md-1"></div>
-	</div>-->
+		 -->
 	</div>
+	
 	<div class="row my-5 gy-2">
-	<div class="col-md-12">	</div>
-	<img  src="./images/SS_Pendulum_Cart.png" style="visibility:hidden; width:5%;height:5%" >
-	</div>
-<div class="row my-5 gy-2">
+	
+	<div class="col-md-12">
+	<div   class="img-container">			
+			
+			<!--<img class = "img-fluid" src="./images/DF_IIM.png" class="img-fluid" > <br/></br> -->
+			
+			<div id="tfbody3" class="card card-body text-left" style="display:none;width:100%;min-width:1000px;background-color:none">
+			<br/>	
+			
+			<span class="card-text text-left"><b>Controllability Test</b></span>
+			
+			$$ Q_c = [g_a, \ F_ag_a] $$
+			
+			<span class="card-text" id="matQcg" ></span><br/<br/>
+			<span class="card-text" id="matQcFg" ></span><br/<br/>
+			<span class="card-text" id="matQcFFg" ></span><br/<br/>
+			
+			<span class="card-text" id="matQc" ></span><br/<br/>
+			 
+			<button class="btn btn-success" onclick="showRank()">Rank of Qc</button>
+				<span id="Cntrl_Test1" style="display:none"></span><br/><br/>
+			<button class="btn btn-success" onclick="showDetQc()">Determinant of Qc</button>
+			    <span id="Cntrl_Test2" style="display:none"></span><br/><br/>
+			<button class="btn btn-success" onclick="showinfo()">Inference</button>
+				<span id="Cntrl_Test3" style="display:none"></span><br/><br/>
+			<!-- <button class="btn btn-success" onclick="GVc()">Gain Values for Deadbeat controller</button> -->
+				
+		    <br/>
+				
+				<p id="Cntrl_Test1"/>
+				<p id="Cntrl_Test2"/>
+				
+				<!--<p id="Feedback_gain_Value1"/>
+				<p id="Feedback_gain_Value2"/>
+				<p id="Feedback_gain_Value3"/>
+				<p id="Feedback_gain_Value4"/>-->
+				
+				
+				
+			</div></div></div></div>
+			
+			<div class="row my-5 gy-2">
 	
 	<div class="col-md-12">	
 	 <div class="d-inline-flex p-3 gy-2">			
@@ -379,86 +381,47 @@
 		
 	</div></div>
 	<input type="number" id="chktest" value="0" style="visibility:hidden">
-	</div>
-	</br>
-	
-	
-	
-	<div class="row my-5 gy-2">
+	</div>		
+			
+			<div class="row my-5 gy-2">
 	
 	<div class="col-md-12">
-	<div   class="img-container">			
+	<div   class="img-container">
+			<div id="tfbodyadd" class="card" style="display:none;width:100%;min-width:1000px;background-color:none">
+			<br/>
 			
-			<!--<img class = "img-fluid" src="./images/DF_IIM.png" class="img-fluid" > <br/></br> -->
-			
-			<div id="tfbody3" class="card card-body text-left" style="display:none;width:100%;min-width:1000px;background-color:none">
-			<br/>	
-			
-			<span class="card-text text-left"><b>Controllability Test for Deadbeat Control</b></span>
-			
-			$$ Q_c = [g_a, \ F_ag_a] $$
-			
-			<span class="card-text" id="matQcg" ></span><br/<br/>
-			<span class="card-text" id="matQcFg" ></span><br/<br/>
-			<span class="card-text" id="matQcFFg" ></span><br/<br/>
-			
-			<span class="card-text" id="matQc" ></span><br/<br/>
-			 
-			<button class="btn btn-success" onclick="showRank()">Rank of Qc</button>
-				<span id="Cntrl_Test1" style="display:none"></span><br/><br/>
-			<button class="btn btn-success" onclick="showDetQc()">Determinant of Qc</button>
-			    <span id="Cntrl_Test2" style="display:none"></span><br/><br/>
-			<button class="btn btn-success" onclick="showinfo()">Inference</button>
-				<span id="Cntrl_Test3" style="display:none"></span><br/><br/>
-			<button class="btn btn-success" onclick="GVc()">Gain Values for Deadbeat controller</button>
-				<span id="Char_Eq" style="display:none"></span>
+			<span id="Char_Eq" style="display:none"></span>
 				<span id="Char_equation" style="display:none"></span><br/>
 				<span id="Des_Eq" style="display:none"></span>
 				<span id="Desire_Eq" style="display:none"></span><br/>
 				<span id="Deadbeat_gain_Value_K" style="display:none"></span><br/>
-				<span id="Pre-Compensator_Gain_Value" style="display:none"></span>
-		    <br/>
-				
-				<p id="Cntrl_Test1"/>
-				<p id="Cntrl_Test2"/>
-				
-				<!--<p id="Feedback_gain_Value1"/>
-				<p id="Feedback_gain_Value2"/>
-				<p id="Feedback_gain_Value3"/>
-				<p id="Feedback_gain_Value4"/>-->
-				
 				<p id="Deadbeat_gain_Value_K"/>
-				
+			
 			</div>
-			
-			
 			
 			<div id="tfbody4" class="card" style="display:none;width:100%;min-width:1000px;background-color:none">
 			<br/>	
 			
 			
+			<button class="btn btn-success" id ="runnew" onclick="EP()" style="visibility:hidden">Enter the desired pole location </button>				
 			
-			<span class="card-text text-left"><b>Controllability Test for State Feedback Control</b></span>
+			<div id="tfbodyadd2" class="card border-0" style="display:none; width:100%;background-color:none">
+			<br/><br/>
 			
-			$$ Q_c1 = [g_a, \ F_ag_a] $$
+			<br/>
+			<span class="card-text "><b>Enter the desired negative pole values for State Feedback Control:</b></span><br/>
+						
+			 <br/><br/>
+						
+			Pole 1 :  P1 = <input type="number" id="npn1" min="-500" value="-1" max="0" step="0.05" style="position:absolute;width:25%" ><br/></br>
+			Pole 2 :  P2 = <input type="number" id="npn2" min="-500" value="-2" max="0" step="0.05" style="position:absolute;width:25%" ><br/></br>
 			
-			<span class="card-text" id="matQc1g" ></span><br/<br/>
-			<span class="card-text" id="matQc1Fg" ></span><br/<br/>
+			<button class="btn btn-success" id ="runnew2" onclick="CNTR()" style="visibility:hidden">Design</button>
 			
 			
-			<span class="card-text" id="matQc1" ></span><br/<br/>
-			 
-			<button class="btn btn-success" onclick="showRankQc1()">Rank of Qc</button>
-				<span id="Cntrl_Test11" style="display:none"></span><br/><br/>
-			<button class="btn btn-success" onclick="showDetQc1()">Determinant of Qc</button>
-			    <span id="Cntrl_Test12" style="display:none"></span><br/><br/>
-			<button class="btn btn-success" onclick="showinfoQc1()">Inference</button>
-				<span id="Cntrl_Test13" style="display:none"></span><br/><br/>
+			</div>
 				
-				<br><br>
-			
-				
-			<button class="btn btn-success" onclick="GVc1()">Gain Values </button>
+			<!-- <button class="btn btn-success" onclick="GVc1()">Gain Values </button> -->
 				<span id="Char_Eq1" style="display:none"></span>
 				<span id="Char_equation1" style="display:none"></span><br/>
 				<span id="Des_Eq1" style="display:none"></span>
@@ -480,52 +443,6 @@
 										
 			<br/><br/>
 			</div>
-			<!--
-			<div id="tfbody4" class="card" style="display:none;width:100%;min-width:1000px;background-color:none">
-			<br/>	
-			<span class="card-text "><b>Observability Test</b></span>
-			<!--$$ Q_{o1} = [c_1 \ c_1A \ c_1A^2 \ c_1A^3]^T $$
-			$$ Q_{o2} = [c_2 \ c_2A \ c_2A^2 \ c_2A^3]^T $$-->
-			<!--$$ Q_o = [C, \ CA, \ CA^2, \ CA^3]^T $$
-			<!--
-			<span class="card-text" id="matQoC" ></span><br/<br/>
-			<span class="card-text" id="matQoCA" ></span><br/<br/>
-			<span class="card-text" id="matQoCAA" ></span><br/<br/>
-			<span class="card-text" id="matQoCAAA" ></span><br/<br/><br/>
-			<span class="card-text" id="matQo" ></span><br/<br/>
-			 
-			<button class="btn btn-success" onclick="showRankQo()">Rank of Qo</button>
-				<span id="Obsrl_Test5" style="display:none"></span><br/><br/>
-			<button class="btn btn-success" onclick="showDetQo()">Determinant of Qo</button>
-			    <span id="Obsrl_Test6" style="display:none"></span><br/><br/>
-			<button class="btn btn-success" onclick="showinfoQo()">Inference</button>
-				<span id="Obsrl_Test7" style="display:none"></span><br/><br/>
-				<button class="btn btn-success" onclick="GVo()">Gain Values </button>
-				<span id="DChar_EqO" style="display:none"></span>
-				<span id="Desired_charO" style="display:none"></span><br/>
-				<span id="C1Char_EqO" style="display:none"></span>
-				<span id="C1_charO" style="display:none"></span><br/>
-				<span id="C2Char_EqO" style="display:none"></span>
-				<span id="C2_charO" style="display:none"></span><br/>
-				<span id="Observer_gain_Value_Ke" style="display:none"></span>
-			<br/>
-				<!--<p id="Obsrl_Test1"/>
-				<p id="Obsrl_Test2"/>
-				<p id="Obsrl_Test3"/>
-				<p id="Obsrl_Test4"/>
-				<p id="Obsrl_Test5"/>
-				<p id="Obsrl_Test6"/>-->
-		 <!--   <br/>
-			<!--<span class="card-text" ><b style="position:absolute;width: 6%;left:38%;top: 50%;">$$ Rank(Q_{o1}) = $$ </b> &nbsp;&nbsp; <input type="number" id="RQo1" value="0" readonly=readonly style="position:absolute;width: 10%;left:45%;top: 55%;"></span> 					
-			<span class="card-text" ><b style="position:absolute;width: 6%;left:38%;top: 70%;">$$ Rank(Q_{o2}) = $$ </b> &nbsp;&nbsp; <input type="number" id="RQo2" value="0" readonly=readonly style="position:absolute;width: 10%;left:45%;top: 75%;"></span> 					
-			<span class="card-text" ><b style="position:absolute;width: 6%;left:38%;top: 90%;">$$ Rank(Q_{o}) = $$ </b> &nbsp;&nbsp; <input type="number" id="RQo" value="0" readonly=readonly style="position:absolute;width: 10%;left:45%;top: 95%;"></span> 
-           	
-			-->
-		<!-- 								
-			<br/><br/>
-			</div> -->
-			
-			
 			
 			<br/>
 	
@@ -535,7 +452,7 @@
 	
 	</div></div>
 	
-			
+	
 	        
 		
 		
@@ -566,8 +483,8 @@
           <!-- Code End here-->
         </div><!--Fourth container under body tag end-->
           
-      <!--</div>
-    </div>-->
+      </div>
+    
 
     <div class="container p-3 my-5 text-primary text-center border"><!--Last and fifth container under body tag start-->
       <div class="row">
