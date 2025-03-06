@@ -2,8 +2,11 @@
 
 Linear time invariant system may be represented in state space form by the following equations:
 State equation:
+
 $$ \dot{x}(t)=A x(t)+B u(t) \tag{1a} $$
+
 Output equation:
+
 $$ y(t)= C x(t) u(t) \tag{1b} $$
 
 <b><i>Deadbeat Control design:</i></b> <br>
@@ -11,20 +14,26 @@ A deadbeat controller is one where the system's output reaches its desired value
 This is achieved by designing the control law such that the poles of the closed-loop system lie at the origin. </br>
 The discrete-time state-space model with feedback can be written as:</br>
 State equation:
+
 $$ {x}[k+1]=F x[k]+g u[k] \tag{2a} $$
+
 Output equation:
+
 $$ y[k]= C x[k] u[k] \tag{2b} $$
+
 where, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">x</span>[<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">k</span>] is state vector, <span style="font-family:Sitka Text;font-style:italic">y</span>[<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">k</span>] is output vector, 
 <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">u</span> is input or control vector, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">F</span> is system matrix, 
 <span style="font-style:italic;font-size:18px">g</span> is input matrix, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">C</span> is output matrix. </br></br>
 
 where, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">K</span> is the state feedback gain matrix, <span style="font-family:Sitka Text;font-style:italic">r</span>[<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">k</span>] is the reference signal (desired output). 
 </br>
-The control input is typically given by:</br>
+The control input is typically given by:
+
 $$ u[k]= - K x[k] + r[k] \tag{3} $$
-</br>
+
+
 State feedback design for deadbeat response:</br>
-The goal of deadbeat control is to place the poles of the closed-loop system at the origin of the z-plane, i.e., all the eigenvalues of (<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">F</span> - <span style="font-style:italic;font-size:18px">g</span><span style="font-family:Bodoni MT;font-style:italic;font-size:18px">K</span>) should be at zero. This ensures the system reaches the equilibrium state (desired state) as quickly as possible.
+The goal of deadbeat control is to place the poles of the closed-loop system at the origin of the z-plane, i.e., all the eigenvalues of (<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">F</span> - <span style=font-style:italic;font-size:18px">g</span><span style="font-family:Bodoni MT;font-style:italic;font-size:18px">K</span>) should be at zero. This ensures the system reaches the equilibrium state (desired state) as quickly as possible.
 For a discrete-time system, the characteristic equation of the closed-loop system is derived from the state-space model with the feedback gain <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">K</span>. The poles of the system are determined by the eigenvalues of (<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">F</span> - <span style="font-style:italic;font-size:18px">g</span><span style="font-family:Bodoni MT;font-style:italic;font-size:18px">K</span>). </br></br>
 Controllability: The system must be controllable for a deadbeat design to be possible. Controllability ensures that it's possible to drive the system from any initial state to any desired state using the available inputs. </br></br>
 Pole Placement: To achieve a deadbeat response, place the poles of the closed-loop system at the origin. This requires solving for the feedback gain matrix <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">K</span> that ensures that all eigenvalues of the matrix (<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">F</span> - <span style="font-style:italic;font-size:18px">g</span><span style="font-family:Bodoni MT;font-style:italic;font-size:18px">K</span>) are zero. </br>
@@ -61,15 +70,18 @@ Then the desired characteristic equation is:
 $$ (z-{P_z}_1)(z-{P_z}_2)(z-{P_z}_3)...(z-{P_z}_n)=0 \tag{6} $$
 
 The required state feedback gain (<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">K</span>) vector elements are obtained by comparing the matching coefficients of (5) and (6).
-<br/><br/>
- 
+
+
+
 <b><i>State Space Model of Mechanical System:</i></b> <br>
 Consider the mechanical system shown in Fig. 1. Assume that the system is linear. The external force <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">u</span>(<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">t</span>) is the input to the system, and the displacement <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">y</span>(<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">t</span>) of the mass is the output. 
-The displacement <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">y</span>(<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">t</span>) is measured from the equilibrium position in the absence of the external force. This system is a single-input, single-output system. </br>
+The displacement <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">y</span>(<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">t</span>) is measured from the equilibrium position in the absence of the external force. This system is a single-input, single-output system. 
+
 <div align="center">
 <img class="img-fluid"  src="./images/Mechanical Model.png" alt=""><br>        
 <figcaption style="color:black"> Fig.1. Mechanical System</figcaption>						  
-</div><br/>
+</div>
+
 where, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">m</span> is mass, 
 <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">b</span> is damping friction, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">k</span> is the spring constant, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">y</span> is the displacement (output) and 
 <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">u</span> is the external force. </br></br>
@@ -78,17 +90,19 @@ The system equation is:
 $$ m\ddot{y} + b \dot{y} + k y = 0 \tag{7} $$
 
 <b><i>State Space form of the Mechanical system:</i></b> <br>
-The state-space form:</br>
+The state-space form:
 
-<br/> Continuous State Space form: <br/>
+<br/> Continuous State Space form: 
 
 $$	\begin{bmatrix} 	\dot{x}_1(t)  \\	\dot{x}_2(t) \end{bmatrix}	= \begin{bmatrix} 	0  & 1 \\	-\frac{k}{m}  & -\frac{b}{m} \end{bmatrix} \begin{bmatrix} 	x_1(t)  \\	x_2(t) \end{bmatrix} + \begin{bmatrix} 0  \\	\frac{1}{m} \end{bmatrix} u(t)	 $$ 
 $$	y(t)	= \begin{bmatrix} 	0  & 1 \end{bmatrix} \begin{bmatrix} 	x_1(t)  \\	x_2(t) \end{bmatrix} 	\quad	\tag{8} $$
 
 where,
 <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">x<sub>1</sub></span> is the displacement, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">x<sub>2</sub></span> is the velocity, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">u(t)</span> is the external force, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">y(t)</span> is the output. 
-<br/><br/>
-<br/> Discrete State Space form: <br/>
+
+
+
+<br/> Discrete State Space form:
 
 $$	\begin{bmatrix} 	x_1 [k+1]  \\	x_2 [k+1] \end{bmatrix}	= \begin{bmatrix} 	1  & T_s \\	-\frac{k T_s}{m}  & 1-\frac{b}{m} T_s \end{bmatrix} \begin{bmatrix} 	x_1 [k] \\	x_2 [k] \end{bmatrix} + \begin{bmatrix} \frac{{T_s}^2}{m}   \\	\frac{1}{m} (1-\frac{b T_s}{m})  T_s \end{bmatrix} u[k]	$$ 
 $$	y [k]	= \begin{bmatrix} 	0  & 1 \end{bmatrix} \begin{bmatrix} 	x_1[k]  \\	x_2[k] \end{bmatrix} 	\quad	\tag{9} $$
