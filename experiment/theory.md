@@ -102,10 +102,10 @@ where,
 
 
 
-<br/> Discrete State Space form:
+ Discrete State Space form:
 
 $$	\begin{bmatrix} 	x_1 [k+1]  \\	x_2 [k+1] \end{bmatrix}	= \begin{bmatrix} 	1  & T_{s} \\	-\frac{k \ T_{s}}{m}  & 1-\frac{b}{m} \ T_{s} \end{bmatrix} \begin{bmatrix} 	x_1 [k] \\	x_2 [k] \end{bmatrix} + \begin{bmatrix} \frac{{T_{s}}^2}{m}   \\	\frac{1}{m} (1-\frac{b T_{s}}{m})  T_{s} \end{bmatrix} u[k]	$$
- 
+
 $$	y [k]	= \begin{bmatrix} 	0  & 1 \end{bmatrix} \begin{bmatrix} 	x_1[k]  \\	x_2[k] \end{bmatrix} 	\quad	\tag{9} $$
 
 
