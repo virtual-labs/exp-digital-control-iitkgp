@@ -13,7 +13,7 @@ The discrete-time state-space model with feedback can be written as:</br>
 State equation:
 $$ {x}[k+1]=F x[k]+g u[k] \tag{2a} $$
 Output equation:
-$$ y[k])= C x[k] u[k] \tag{2b} $$
+$$ y[k]= C x[k] u[k] \tag{2b} $$
 where, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">x</span>[<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">k</span>] is state vector, <span style="font-family:Sitka Text;font-style:italic">y</span>[<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">k</span>] is output vector, 
 <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">u</span> is input or control vector, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">F</span> is system matrix, 
 <span style="font-style:italic;font-size:18px">g</span> is input matrix, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">C</span> is output matrix. </br></br>
