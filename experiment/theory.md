@@ -94,8 +94,9 @@ The state-space form:
 
 <br/> Continuous State Space form: 
 
-$$	\begin{bmatrix} 	\dot{x}_1(t)  \\	\dot{x}_2(t) \end{bmatrix}	= \begin{bmatrix} 	0  & 1 \\	-\frac{k}{m}  & -\frac{b}{m} \end{bmatrix} \begin{bmatrix} 	x_1(t)  \\	x_2(t) \end{bmatrix} + \begin{bmatrix} 0  \\	\frac{1}{m} \end{bmatrix} u(t)	 $$ 
-$$	y(t)	= \begin{bmatrix} 	0  & 1 \end{bmatrix} \begin{bmatrix} 	x_1(t)  \\	x_2(t) \end{bmatrix} 	\quad	\tag{8} $$
+$$	\begin{bmatrix} 	\dot{x}_1(t)  \newline	\dot{x}_2(t) \end{bmatrix}	= \begin{bmatrix} 	0  & 1 \newline	-\frac{k}{m}  & -\frac{b}{m} \end{bmatrix} \begin{bmatrix} 	x_1(t)  \newline	x_2(t) \end{bmatrix} + \begin{bmatrix} 0  \newline	\frac{1}{m} \end{bmatrix} u(t)	 $$ 
+
+$$	y(t)	= \begin{bmatrix} 	0  & 1 \end{bmatrix} \begin{bmatrix} 	x_1(t)  \newline	x_2(t) \end{bmatrix} 	\quad	\tag{8} $$
 
 where,
 <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">x<sub>1</sub></span> is the displacement, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">x<sub>2</sub></span> is the velocity, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">u(t)</span> is the external force, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">y(t)</span> is the output. 
