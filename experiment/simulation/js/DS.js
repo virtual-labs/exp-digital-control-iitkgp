@@ -205,18 +205,31 @@ function DSSMS(){
 			
 			
 			
-			document.getElementById("run1").style.visibility="visible";
+			//document.getElementById("run1").style.visibility="visible";
+			document.getElementById("newb1").style.visibility="visible";
 			document.getElementById("clr").style.display="block";
 			//document.getElementById('db1').style.display="block";
 }
 
+function controlT(){
+	
+	DBR();
+	
+}
+
+
+
+
+
+
 function EP(){
-	document.getElementById('tfbody11').style.display = "block";
+	document.getElementById('tfbodyadd2').style.display = "block";
 			//document.getElementById('tfbody2').style.display = "block";
 	       
-			
-            var P1 = document.getElementById('np1').value;			
-			var P2 = document.getElementById('np2').value;
+		document.getElementById("runnew2").style.visibility="visible";
+		
+            var P1 = document.getElementById('npn1').value;			
+			var P2 = document.getElementById('npn2').value;
 			//var P3 = document.getElementById('np3').value;
            // var P4 = document.getElementById('np4').value;
 			
@@ -226,7 +239,7 @@ function EP(){
 			//DP4="Desired Pole 4 = " +P4+ "";
 			
 			//document.getElementById("run2").style.display="block";			
-			document.getElementById('db1').style.display="block";
+			//document.getElementById('db1').style.display="block";
 			
 			/*document.getElementById("Pole_Value1").innerHTML=DP1;
 			document.getElementById("Pole_Value2").innerHTML=DP2;
@@ -431,9 +444,19 @@ document.getElementById("Cntrl_Test2").style.display="block";
 
 function showinfo(){
 document.getElementById("Cntrl_Test3").style.display="block";
+document.getElementById('db1').style.display="block";
+var inference = document.getElementById('Cntrl_Test3');
+
+if(inference.innerHTML == "System is completely controllable"){
+	document.getElementById('db1').style.display="block";
+	}
+if(inference.innerHTML == "System is not controllable"){
+	document.getElementById('db1').style.display="none";
+	}
 }
 
 function GVc(){
+document.getElementById("tfbodyadd").style.display="block";
 document.getElementById("Char_Eq").style.display="block";
 document.getElementById("Char_equation").style.display="block";
 document.getElementById("Des_Eq").style.display="block";
@@ -520,8 +543,8 @@ function CNTR(){
 			var Faga= math.matrix([abd1,abd2]);
 			//var FaFaga= math.matrix([aabd1, aabd2, aabd3]);
 						
-			document.getElementById('matQc1g').innerHTML = 'ga ='+ ga;
-			document.getElementById('matQc1Fg').innerHTML = ' Faga ='+ Faga;
+			/* document.getElementById('matQc1g').innerHTML = 'ga ='+ ga;
+			document.getElementById('matQc1Fg').innerHTML = ' Faga ='+ Faga; */
 			//document.getElementById('matQcFFg').innerHTML = ' Fa<sup>2</sup>ga ='+ FaFaga;
 			
 			
@@ -531,7 +554,7 @@ function CNTR(){
 			
 			var Qc1= math.matrix([[bd1, abd1],[bd2, abd2]]);
 			
-			document.getElementById('matQc1').innerHTML = ' Q<sub>c1</sub> =['+ bd1+',\t'+abd1+';\t\t'+bd2+','+abd2+']'
+			//document.getElementById('matQc1').innerHTML = ' Q<sub>c1</sub> =['+ bd1+',\t'+abd1+';\t\t'+bd2+','+abd2+']'
 			
 			var DQc1= math.divide(math.round(math.multiply(math.det(Qc1),1000)),1000);
 			console.log(DQc1);
@@ -539,13 +562,13 @@ function CNTR(){
 			//DQc=0;
 			
 			if (DQc1!=0)
-			{  Cntrl_Test11=" Rank of Q<sub>c1</sub> = Order of A = n = 2";			   
+			{ /*  Cntrl_Test11=" Rank of Q<sub>c1</sub> = Order of A = n = 2";			   
 			   Cntrl_Test12="Determinent of Q<sub>c1</sub> = " +DQc1+ "";				    
 			   Cntrl_Test13=" System is completely controllable";
 			   document.getElementById("Cntrl_Test11").innerHTML=Cntrl_Test11;
 			   document.getElementById("Cntrl_Test12").innerHTML=Cntrl_Test12;
 			   document.getElementById("Cntrl_Test13").innerHTML=Cntrl_Test13;
-			   
+			    */
 			  
 			   
 			   //var k1 = math.divide(p1p2p3p4, math.add(a23b4,-a43b2));
@@ -562,8 +585,8 @@ function CNTR(){
 			   var kc2 = math.divide(math.round(math.multiply(math.divide(math.add(ad11,ad22,-math.multiply(bd1,kc1)),bd2),1000)),1000);
 			   */
 			   
-			   var P1 = document.getElementById('np1').value;			
-			   var P2 = document.getElementById('np2').value;
+			   var P1 = document.getElementById('npn1').value;			
+			   var P2 = document.getElementById('npn2').value;
 			
            
 		      var Zp1 = math.pow(math.e,math.multiply(Ts,P1));
@@ -645,14 +668,14 @@ function CNTR(){
 			   
 			   
 			}
-			   else 
+			   /* else 
 			   {   Cntrl_Test11=" Rank of Q<sub>c1</sub> < Order of A = n = 2";
 		           Cntrl_Test12="Determinent of Q<sub>c1</sub> = " +DQc1+ "";		
 			       Cntrl_Test13=" System is not controllable";
 			       document.getElementById("Cntrl_Test11").innerHTML=Cntrl_Test11;
 				   document.getElementById("Cntrl_Test12").innerHTML=Cntrl_Test12;
 				   document.getElementById("Cntrl_Test13").innerHTML=Cntrl_Test13;
-			   }
+			   } */
 		
 			
 	        	
@@ -672,6 +695,8 @@ document.getElementById("Cntrl_Test13").style.display="block";
 
 function GVc1(){
 document.getElementById("Char_Eq1").style.display="block";
+document.getElementById("tfbody4").style.display="block";
+document.getElementById("runnew").style.visibility="visible";
 document.getElementById("Char_equation1").style.display="block";
 document.getElementById("Des_Eq1").style.display="block";
 document.getElementById("Desire_Eq1").style.display="block";
@@ -696,10 +721,12 @@ function test2(){
 
 function str(){
 	if(document.getElementById('chktest').value==0){
+		GVc();
 		DBR();
 	}
 	if(document.getElementById('chktest').value==1){
-		CNTR();
+		GVc1();
+		//CNTR();
 	}
 	
 }
