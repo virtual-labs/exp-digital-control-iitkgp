@@ -2,38 +2,61 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "Q1. What is the main characteristic of a deadbeat response in a discrete-time control system?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "The system reaches the desired state in the shortest possible time without overshooting.",
+        "b": "The system oscillates around the desired state.",
+        "c": "The system takes an infinite time to reach the desired state.",
+        "d": "The system has a sustained oscillation."
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "Q2. In deadbeat response design, the objective is to:",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Minimize the rise time.",
+        "b": "Ensure that the system reaches the desired state in a finite number of steps.",
+        "c": "Minimize the overshoot.",
+        "d": "Maximize the settling time."
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Q3. Which of the following statements about deadbeat control is TRUE?",
+      "answers": {
+        "a": "It requires infinite time to achieve the desired state.",
+        "b": "It is typically used for continuous-time systems only.",
+        "c": "It minimizes the control effort.",
+        "d": "It ensures that the system state reaches the desired state in a finite, typically minimal, number of steps."
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Q4. In a discrete-time system, if the poles are placed on the unit circle in the z-plane, the system:",
+      "answers": {
+        "a": "Will have a deadbeat response.",
+        "b": "Will reach the desired state in a finite number of steps.",
+        "c": "Will exhibit sustained oscillations.",
+        "d": "Will have a fast settling time."
       },
       "correctAnswer": "c",
       "difficulty": "beginner"
+    },
+    {
+      "question": "Q5. A system with a deadbeat response is:",
+      "answers": {
+        "a": "Stable with overshoot but no oscillations",
+        "b": "Unstable with overshoot and oscillations",
+        "c": "Always unstable",
+        "d": "Stable with no overshoot and no oscillations"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
     }
+	
+	
   ]
 }
