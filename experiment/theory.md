@@ -7,7 +7,7 @@ $$ \dot{x}(t)=A x(t)+B u(t) \tag{1a} $$
 
 Output equation:
 
-$$ y(t)= C x(t) u(t) \tag{1b} $$
+$$ y(t)= C x(t) \tag{1b} $$
 
 <b><i>Deadbeat Control design:</i></b> <br>
 A deadbeat controller is one where the system's output reaches its desired value in the smallest number of steps (the so-called "deadbeat time" or "deadbeat response"). 
@@ -19,13 +19,13 @@ $$ {x}[k+1]=F x[k]+g u[k] \tag{2a} $$
 
 Output equation:
 
-$$ y[k] = C x[k] u[k] \tag{2b} $$
+$$ y[k] = C x[k] \tag{2b} $$
 
 where, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">x</span>[<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">k</span>] is state vector, <span style="font-family:Sitka Text;font-style:italic">y</span>[<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">k</span>] is output vector, 
 <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">u</span> is input or control vector, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">F</span> is system matrix, 
 <span style="font-style:italic;font-size:18px">g</span> is input matrix, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">C</span> is output matrix. </br></br>
 
-where, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">K</span> is the state feedback gain matrix, <span style="font-family:Sitka Text;font-style:italic">r</span>[<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">k</span>] is the reference signal (desired output). 
+where, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">K</span> is the state feedback gain matrix, <span style="font-family:Sitka Text;font-style:italic">r</span>[<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">k</span>] is the reference signal. 
 </br>
 The control input is typically given by:
 
