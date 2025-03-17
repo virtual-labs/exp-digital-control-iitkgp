@@ -565,7 +565,7 @@ function DBR(){
 			   
 			   var k2 = math.divide(math.round(math.multiply(math.divide(math.add(ad11,ad22,-math.multiply(bd1,k1)),bd2),1000)),1000); */
 			   
-			   var k1_1 = math.add(ad11,ad22);
+			   /* var k1_1 = math.add(ad11,ad22);
 			   var k1_2 = math.add(math.multiply(ad11,bd2),-math.multiply(ad21,bd1));
 			   var k1_3 = math.add(math.multiply(ad12,ad21),-math.multiply(ad11,ad22));
 			   var k1_4 = math.add(math.multiply(ad12,bd2),-math.multiply(ad22,bd1));
@@ -579,6 +579,20 @@ function DBR(){
 			   var k2_num = math.add(ad11,ad22,-math.multiply(bd1,k1));
 			   var k2 = math.divide(math.round(math.multiply(math.divide(k2_num,bd2),1000)),1000);
 		
+			   
+			   
+			   console.log(k1);
+			   console.log(k2);
+			    */
+			   
+			   var coeff = [ [ bd1, bd2],[math.add(math.multiply(ad12,bd2),-math.multiply(bd1,ad22)), math.add(math.multiply(ad21,bd1),-math.multiply(bd2,ad11))] ];
+			   var cont = [math.add(ad22,ad11), math.add(math.multiply(ad12,ad21),-math.multiply(ad11,ad22))];
+			   var sol = math.lusolve(coeff,cont);
+			   
+			   var k1 = math.divide(math.round(math.multiply(sol[0][0],1000)),1000);
+			   var k2 = math.divide(math.round(math.multiply(sol[1][0],1000)),1000);
+			   
+			   
 			   
 			   
 			   console.log(k1);
@@ -607,11 +621,23 @@ function DBR(){
 			   console.log(Ka);
 			   
 			  
-			   var ad11ad22 = math.divide(math.round(math.multiply(math.add(ad11,-ad22),1000)),1000);
+			   var ad11ad22 = math.divide(math.round(math.multiply(math.add(ad11,ad22),10000)),10000);
+			   var ad12bd2 = math.divide(math.round(math.multiply(math.multiply(ad12,bd2),10000)),10000);
+			   var ad22bd1 = math.divide(math.round(math.multiply(math.multiply(ad22,bd1),10000)),10000);
+			   var ad21bd1 = math.divide(math.round(math.multiply(math.multiply(ad21,bd1),10000)),10000);
+			   var ad11bd2 = math.divide(math.round(math.multiply(math.multiply(ad11,bd2),10000)),10000);
+			   
+			   var ad12ad21 = math.divide(math.round(math.multiply(math.multiply(ad12,ad21),10000)),10000);
+			   
+			   var ad12bd2ad22bd1 = math.divide(math.round(math.multiply(math.add(ad12bd2,-ad22bd1),10000)),10000);
+			   var ad21bd1ad11bd2 = math.add(ad21bd1,-ad11bd2);
+			   var ad11ad22ad12ad21 = math.divide(math.round(math.multiply(math.add(-math.multiply(ad12,ad21),math.multiply(ad11,ad22)),10000)),10000);
+			   
+			   console.log(ad11ad22ad12ad21);
 			   
 			   CharEq=" Characteristic equation of the closed loop system\t:";
 			   document.getElementById("Char_Eq").innerHTML=CharEq;
-			   document.getElementById('Char_equation').innerHTML = 'z<sup>2</sup>\t+\t z ( '+bd1+'\t k<sub>1</sub>\t+\t('+bd2+')\t k<sub>2</sub>\t - \t ( '+ad11ad22+'\t)) + [('+ad11+'\t-\t('+bd1+')k<sub>1</sub>)('+ad22+'\t-\t('+bd2+')k<sub>2</sub>)\t+\t('+ad12+'\t-\t('+bd1+')k<sub>2</sub>)('+bd2+'k<sub>1</sub>\t-t('+ad21+'))] =\t0';
+			   document.getElementById('Char_equation').innerHTML = 'z<sup>2</sup>\t+\t z [ '+bd1+'\t k<sub>1</sub>\t+\t('+bd2+')\t k<sub>2</sub>\t - \t ( '+ad11ad22+'\t)]\t + \t [\t('+ad12bd2ad22bd1+')\tk<sub>1</sub>\t+\t('+ad21bd1ad11bd2+')\tk<sub>2</sub>\t+\t('+ad11ad22ad12ad21+')\t]\t=\t0';
 			   
 			   
 			   DesEq=" Desired equation from the poles\t:";
@@ -687,9 +713,9 @@ function CNTR(){
 	var Obsrl_Test5;
 	var Obsrl_Test6;*/
 	
-	 document.getElementById('tfbody4').style.display = "block";
+	document.getElementById('tfbody4').style.display = "block";
 	
-	        var m = document.getElementById('m1').value;			
+	       /*  var m = document.getElementById('m1').value;			
 			var B = document.getElementById('B1').value;
 			var K = document.getElementById('K1').value;
            
@@ -721,9 +747,144 @@ function CNTR(){
 			var bd2=math.divide(math.round(math.multiply(math.add(bd2_1,-bd2_2),1000)),1000);
 			
 			var mF = math.matrix([[ad11, ad12], [ad21, ad22]]);
+			var mg = math.matrix([[bd1], [bd2]]); */
+			
+			var m = document.getElementById('m1').value;			
+			var B = document.getElementById('B1').value;
+			var K = document.getElementById('K1').value;
+           
+						
+	        var Ts = document.getElementById('Ts1').value;
+						
+			//var g=9.8;
+			
+			//var den=math.add(math.multiply(I,math.add(M,m)),math.multiply(M,m,l,l));
+			
+							
+							
+			
+			/* var ad11=1;
+			var ad12= Ts;
+			var ad21_1=math.divide(math.multiply(K,Ts),m);
+			
+						
+			var ad21=math.divide(math.round(math.multiply(ad21_1,1000)),1000);
+			
+			console.log(ad21);
+			
+			var ad22_1=math.add(1,-math.divide(math.multiply(B,Ts),m));
+			var ad22=math.divide(math.round(math.multiply(ad22_1,1000)),1000);
+			
+			var bd1=math.divide(math.round(math.multiply(math.divide(math.multiply(Ts,Ts),m),1000)),1000);
+			var bd2_1=math.divide(Ts,m);
+			var bd2_2=math.divide(math.multiply(B,math.pow(Ts,2)),m);
+			var bd2=math.divide(math.round(math.multiply(math.add(bd2_1,-bd2_2),1000)),1000); */
+			
+			
+			
+			var a21=math.divide(math.round(math.multiply(math.divide(-K,m),1000)),1000);
+		    var a22=math.divide(math.round(math.multiply(math.divide(-B,m),1000)),1000);
+			
+			console.log(a22);
+			
+			//var a23=math.divide(math.round(math.multiply(math.divide(math.multiply(m,m,g,l,l),den),1000)),1000);;
+			var b2=math.divide(math.round(math.multiply(math.divide(1,m),1000)),1000);
+			console.log(b2);
+			
+			//document.getElementById('a_22').value = a22;
+			//document.getElementById('b_2').value = b2;
+			
+			//var a42=math.divide(math.round(math.multiply(math.divide(-math.multiply(m,l,b),den),1000)),1000);;
+			//var a43=math.divide(math.round(math.multiply(math.divide(math.add(math.multiply(m,g,l,M),math.multiply(m,g,l,m)),den),1000)),1000);;
+			//var b4=math.divide(math.round(math.multiply(math.divide(math.multiply(m,l),den),1000)),1000);;
+			
+			var a11=b1=c12=d11=0;
+			var a12=c11=1;
+							
+							
+			
+			///// for F matrix
+			var a1_11 = math.divide(math.round(math.multiply(math.multiply(a11,Ts),10000)),10000);
+			var a1_12 = math.divide(math.round(math.multiply(math.multiply(a12,Ts),10000)),10000);
+			var a1_21 = math.divide(math.round(math.multiply(math.multiply(a21,Ts),10000)),10000);
+			var a1_22 = math.divide(math.round(math.multiply(math.multiply(a22,Ts),10000)),10000);
+			
+			var a2_11 = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a11,a11),math.multiply(a12,a21)),0.5,Ts,Ts),10000)),10000);
+			var a2_12 = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a11,a12),math.multiply(a12,a22)),0.5,Ts,Ts),10000)),10000);
+			var a2_21 = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a21,a11),math.multiply(a22,a21)),0.5,Ts,Ts),10000)),10000);
+			var a2_22 = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a21,a12),math.multiply(a22,a22)),0.5,Ts,Ts),10000)),10000);
+			
+			var a3_11 = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a2_11,a11),math.multiply(a2_12,a21)),0.3333,Ts),10000)),10000);
+			var a3_12 = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a2_11,a12),math.multiply(a2_12,a22)),0.3333,Ts),10000)),10000);
+			var a3_21 = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a2_21,a11),math.multiply(a2_22,a21)),0.3333,Ts),10000)),10000);
+			var a3_22 = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a2_21,a12),math.multiply(a2_22,a22)),0.3333,Ts),10000)),10000);
+			
+			var a4_11 = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a3_11,a11),math.multiply(a3_12,a21)),0.25,Ts),10000)),10000);
+			var a4_12 = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a3_11,a12),math.multiply(a3_12,a22)),0.25,Ts),10000)),10000);
+			var a4_21 = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a3_21,a11),math.multiply(a3_22,a21)),0.25,Ts),10000)),10000);
+			var a4_22 = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a3_21,a12),math.multiply(a3_22,a22)),0.25,Ts),10000)),10000);
+			
+			var a5_11 = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a4_11,a11),math.multiply(a4_12,a21)),0.2,Ts),10000)),10000);
+			var a5_12 = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a4_11,a12),math.multiply(a4_12,a22)),0.2,Ts),10000)),10000);
+			var a5_21 = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a4_21,a11),math.multiply(a4_22,a21)),0.2,Ts),10000)),10000);
+			var a5_22 = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a4_21,a12),math.multiply(a4_22,a22)),0.2,Ts),10000)),10000);
+			
+			var a6_11 = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a5_11,a11),math.multiply(a5_12,a21)),0.1667,Ts),10000)),10000);
+			var a6_12 = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a5_11,a12),math.multiply(a5_12,a22)),0.1667,Ts),10000)),10000);
+			var a6_21 = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a5_21,a11),math.multiply(a5_22,a21)),0.1667,Ts),10000)),10000);
+			var a6_22 = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a5_21,a12),math.multiply(a5_22,a22)),0.1667,Ts),10000)),10000);
+			
+			
+			var ad11 = math.divide(math.round(math.multiply(math.add(1,a1_11,a2_11,a3_11,a4_11,a5_11,a6_11),10000)),10000);
+			var ad12 = math.divide(math.round(math.multiply(math.add(a1_12,a2_12,a3_12,a4_12,a5_12,a6_12),10000)),10000);
+			var ad21 = math.divide(math.round(math.multiply(math.add(a1_21,a2_21,a3_21,a4_21,a5_21,a6_21),10000)),10000);
+			var ad22 = math.divide(math.round(math.multiply(math.add(1,a1_22,a2_22,a3_22,a4_22,a5_22,a6_22),10000)),10000);
+			
+			///// for g matrix
+			
+			var a1_11b = math.divide(math.round(math.multiply(math.multiply(a11,Ts,0.5),10000)),10000);
+			var a1_12b = math.divide(math.round(math.multiply(math.multiply(a12,Ts,0.5),10000)),10000);
+			var a1_21b = math.divide(math.round(math.multiply(math.multiply(a21,Ts,0.5),10000)),10000);
+			var a1_22b = math.divide(math.round(math.multiply(math.multiply(a22,Ts,0.5),10000)),10000);
+			
+			var a2_11b = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a11,a11),math.multiply(a12,a21)),0.1667,Ts,Ts),10000)),10000);
+			var a2_12b = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a11,a12),math.multiply(a12,a22)),0.1667,Ts,Ts),10000)),10000);
+			var a2_21b = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a21,a11),math.multiply(a22,a21)),0.1667,Ts,Ts),10000)),10000);
+			var a2_22b = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a21,a12),math.multiply(a22,a22)),0.1667,Ts,Ts),10000)),10000);
+			
+			var a3_11b = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a2_11b,a11),math.multiply(a2_12b,a21)),0.25,Ts),10000)),10000);
+			var a3_12b = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a2_11b,a12),math.multiply(a2_12b,a22)),0.25,Ts),10000)),10000);
+			var a3_21b = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a2_21b,a11),math.multiply(a2_22b,a21)),0.25,Ts),10000)),10000);
+			var a3_22b = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a2_21b,a12),math.multiply(a2_22b,a22)),0.25,Ts),10000)),10000);
+			
+			var a4_11b = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a3_11b,a11),math.multiply(a3_12b,a21)),0.2,Ts),10000)),10000);
+			var a4_12b = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a3_11b,a12),math.multiply(a3_12b,a22)),0.2,Ts),10000)),10000);
+			var a4_21b = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a3_21b,a11),math.multiply(a3_22b,a21)),0.2,Ts),10000)),10000);
+			var a4_22b = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a3_21b,a12),math.multiply(a3_22b,a22)),0.2,Ts),10000)),10000);
+			
+			var a5_11b = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a4_11b,a11),math.multiply(a4_12b,a21)),0.1667,Ts),10000)),10000);
+			var a5_12b = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a4_11b,a12),math.multiply(a4_12b,a22)),0.1667,Ts),10000)),10000);
+			var a5_21b = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a4_21b,a11),math.multiply(a4_22b,a21)),0.1667,Ts),10000)),10000);
+			var a5_22b = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a4_21b,a12),math.multiply(a4_22b,a22)),0.1667,Ts),10000)),10000);
+			
+			var a6_11b = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a5_11b,a11),math.multiply(a5_12b,a21)),0.1428,Ts),10000)),10000);
+			var a6_12b = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a5_11b,a12),math.multiply(a5_12b,a22)),0.1428,Ts),10000)),10000);
+			var a6_21b = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a5_21b,a11),math.multiply(a5_22b,a21)),0.1428,Ts),10000)),10000);
+			var a6_22b = math.divide(math.round(math.multiply(math.multiply(math.add(math.multiply(a5_21b,a12),math.multiply(a5_22b,a22)),0.1428,Ts),10000)),10000);
+			
+			var ad11b = math.divide(math.round(math.multiply(math.add(1,a1_11b,a2_11b,a3_11b,a4_11b,a5_11b,a6_11b),10000)),10000);
+			var ad12b = math.divide(math.round(math.multiply(math.add(a1_12b,a2_12b,a3_12b,a4_12b,a5_12b,a6_12b),10000)),10000);
+			var ad21b = math.divide(math.round(math.multiply(math.add(a1_21b,a2_21b,a3_21b,a4_21b,a5_21b,a6_21b),10000)),10000);
+			var ad22b = math.divide(math.round(math.multiply(math.add(1,a1_22b,a2_22b,a3_22b,a4_22b,a5_22b,a6_22b),10000)),10000);
+			
+			var bd1 = math.divide(math.round(math.multiply(math.add(math.multiply(ad11b,b1,Ts),math.multiply(ad12b,b2,Ts)),10000)),10000);
+			//var bd12 = math.divide(math.round(math.multiply(math.add(math.multiply(ad11b,b12,Ts),math.multiply(ad12b,b22,Ts)),10000)),10000);
+			var bd2 = math.divide(math.round(math.multiply(math.add(math.multiply(ad21b,b1,Ts),math.multiply(ad22b,b2,Ts)),10000)),10000);
+			//var bd22 = math.divide(math.round(math.multiply(math.add(math.multiply(ad21b,b12,Ts),math.multiply(ad22b,b22,Ts)),10000)),10000);
+			
+			var mF = math.matrix([[ad11, ad12], [ad21, ad22]]);
 			var mg = math.matrix([[bd1], [bd2]]);
 			
-					
 			
 			//////////////////////////////////////////////
 			
@@ -792,18 +953,20 @@ function CNTR(){
 			   var P2 = document.getElementById('npn2').value;
 			
            
-		      var Zp1 = math.pow(math.e,math.multiply(Ts,P1));
-		      var Zp2 = math.pow(math.e,math.multiply(Ts,P2));
+		      var Zp1 = math.divide(math.round(math.multiply(math.pow(math.e,math.multiply(Ts,P1)),1000)),1000);
+		      var Zp2 = math.divide(math.round(math.multiply(math.pow(math.e,math.multiply(Ts,P2)),1000)),1000);
 		   
 		   
 			  var p1=Zp1;
 			  var p2=Zp2;
-			  
+			   
+    			console.log(p1);
+			    console.log(p2);
 			  
 			  var p12 = math.add(p1,p2);
 			  var p1p2 = math.multiply(p1,p2);
 			   
-			   var k1_1 = math.add(p12,ad11,ad22);
+			  /*  var k1_1 = math.add(p1p2,ad11,ad22);
 			   var k1_2 = math.add(math.multiply(ad11,bd2),-math.multiply(ad21,bd1));
 			   var k1_3 = math.add(math.multiply(ad12,ad21),-math.multiply(ad11,ad22));
 			   var k1_4 = math.add(math.multiply(ad12,bd2),-math.multiply(ad22,bd1));
@@ -814,16 +977,37 @@ function CNTR(){
 			   
 			   var kc1 = math.divide(math.round(math.multiply(math.divide(k1_num,k1_den),1000)),1000);
 			   
-			   var k2_num = math.add(p1p2,ad11,ad22,-math.multiply(bd1,kc1));
+			   var k2_num = math.add(-p12,ad11,ad22,-math.multiply(bd1,kc1));
 			   var kc2 = math.divide(math.round(math.multiply(math.divide(k2_num,bd2),1000)),1000);
+		 */
+			   /* var k1_1 = math.add(math.multiply(p1p2,bd2),math.multiply(ad12,ad21,bd2),-math.multiply(ad11,ad22,bd2));
+			   var k1_2 = math.add(-p12,ad11,ad22);
+			   var k1_3 = math.add(math.multiply(ad21,bd1),-math.multiply(ad11,bd2));
+			   var k1_4 = math.add(math.multiply(ad11,bd1,bd2),math.multiply(ad12,bd2,bd2),-math.multiply(ad21,bd1,bd1),-math.multiply(ad22,bd1,bd2));
+			   
+			   var k1_num = math.add(k1_1,-math.multiply(k1_2,k1_3));
+			   var k1_den = k1_4;
+			   
+			   var kc1 = math.divide(math.round(math.multiply(math.divide(k1_num,k1_den),1000)),1000);
+			   
+			   var k2_num = math.add(-p12,ad11,ad22,-math.multiply(bd1,kc1));
+			   var kc2 = math.divide(math.round(math.multiply(math.divide(k2_num,bd2),1000)),1000); */
 		
+			   var coeff = [ [ bd1, bd2],[math.add(math.multiply(ad12,bd2),-math.multiply(bd1,ad22)), math.add(math.multiply(ad21,bd1),-math.multiply(bd2,ad11))] ];
+			   var cont = [math.add(ad22,ad11,-p12), math.add(math.multiply(ad12,ad21),-math.multiply(ad11,ad22),p1p2)];
+			   var sol = math.lusolve(coeff,cont);
+			   
+			   var kc1 = math.divide(math.round(math.multiply(sol[0][0],1000)),1000);
+			   var kc2 = math.divide(math.round(math.multiply(sol[1][0],1000)),1000);
 			   
 			   
-		
 			   
 			   
-			   console.log(p1);
-			   console.log(p2);
+			   console.log(kc1);
+			   console.log(kc2);
+			   
+			  // console.log(p1);
+			 //  console.log(p2);
 			   
 			   
 			  /* K1="Feedback gain k1 = " +k1+ "";
@@ -849,14 +1033,24 @@ function CNTR(){
 			   
 			  
 			   
-			   var ad11ad22 = math.divide(math.round(math.multiply(math.add(ad11,-ad22),1000)),1000);
+			   var ad11ad22 = math.divide(math.round(math.multiply(math.add(ad11,ad22),10000)),10000);
+			   var ad12bd2 = math.divide(math.round(math.multiply(math.multiply(ad12,bd2),10000)),10000);
+			   var ad22bd1 = math.divide(math.round(math.multiply(math.multiply(ad22,bd1),10000)),10000);
+			   var ad21bd1 = math.divide(math.round(math.multiply(math.multiply(ad21,bd1),10000)),10000);
+			   var ad11bd2 = math.divide(math.round(math.multiply(math.multiply(ad11,bd2),10000)),10000);
+			   
+			   var ad12ad21 = math.divide(math.round(math.multiply(math.multiply(ad12,ad21),10000)),10000);
+			   
+			   var ad12bd2ad22bd1 = math.divide(math.round(math.multiply(math.add(ad12bd2,-ad22bd1),10000)),10000);
+			   var ad21bd1ad11bd2 = math.add(ad21bd1,-ad11bd2);
+			   var ad11ad22ad12ad21 = math.divide(math.round(math.multiply(math.add(-math.multiply(ad12,ad21),math.multiply(ad11,ad22)),10000)),10000);
 			   
 			   CharEq1=" Characteristic equation of the closed loop system\t:";
 			   document.getElementById("Char_Eq1").innerHTML=CharEq1;
-			   document.getElementById('Char_equation1').innerHTML = 'z<sup>2</sup>\t+\t z ( '+bd1+'\t k<sub>1</sub>\t+\t('+bd2+')\t k<sub>2</sub>\t - \t ( '+ad11ad22+'\t)) + [('+ad11+'\t-\t('+bd1+')k<sub>1</sub>)('+ad22+'\t-\t('+bd2+')k<sub>2</sub>)\t+\t('+ad12+'\t-\t('+bd1+')k<sub>2</sub>)('+bd2+'k<sub>1</sub>\t-t('+ad21+'))] =\t0';
+			   document.getElementById('Char_equation1').innerHTML = 'z<sup>2</sup>\t+\t z [ '+bd1+'\t k<sub>1</sub>\t+\t('+bd2+')\t k<sub>2</sub>\t - \t ( '+ad11ad22+'\t)]\t + \t [\t('+ad12bd2ad22bd1+')\tk<sub>1</sub>\t+\t('+ad21bd1ad11bd2+')\tk<sub>2</sub>\t+\t('+ad11ad22ad12ad21+')\t]\t=\t0';
 			   
-			   var p12 = math.divide(math.round(math.multiply(math.add(p1,p2),1000)),1000);
-			   var p1p2 = math.divide(math.round(math.multiply(math.multiply(p1,p2),1000)),1000);
+			   var p12 = math.divide(math.round(math.multiply(math.add(-p1,-p2),1000)),1000);
+			   var p1p2 = math.divide(math.round(math.multiply(math.multiply(-p1,-p2),1000)),1000);
 			   
 			   DesEq1=" Desired equation from the poles\t:";
 			   document.getElementById("Des_Eq1").innerHTML=DesEq1;
