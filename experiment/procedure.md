@@ -41,12 +41,12 @@
 <b>Fig. 4. Button to check the controllability of the system </b>							  
 </div>
 
-5. Click on the 'Rank' or 'Determinant'  or "inference' buttons to get the the Controllability test. 
+5. Click on the 'Rank' or 'Determinant'  or "Inference' buttons to get the the Controllability test. 
 
 <div align="center">
 <img class="img-fluid"  src="./images/Qc.png" alt="">
 
-<b>Fig. 5. Button to get Rank, determinant, inference of the Controllability test </b>						  
+<b>Fig. 5. Button to get Rank, Determinant, Inference of the Controllability test </b>						  
 </div>
 
 6. Click on 'Design' dropdown button and select the desired option for the design. 
