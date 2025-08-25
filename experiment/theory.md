@@ -100,10 +100,10 @@ where,
 
 <br/> Discrete State Space form:
 
-$$\begin{bmatrix} 	x_1 [k+1]  \newline	x_2 [k+1] \end{bmatrix}	= \begin{bmatrix} 	1  & T_{s} \newline	-\frac{k T_{s}}{m}  & 1-\frac{b T_{s}}{m}  \end{bmatrix} \begin{bmatrix} 	x_1 [k] \newline	x_2 [k] \end{bmatrix} + \begin{bmatrix} \frac{{T_{s}}^2}{2m}   \newline	\frac{T_{s}}{m} (1-\frac{b T_{s}}{2m})   \end{bmatrix} u[k] 
+$$\begin{bmatrix} 	x_1 [k+1]  \newline	x_2 [k+1] \end{bmatrix}	= \begin{bmatrix} 	1  & T_{s} \newline	-\frac{k T_{s}}{m}  & 1-\frac{b T_{s}}{m}  \end{bmatrix} \begin{bmatrix} 	x_1 [k] \newline	x_2 [k] \end{bmatrix} + \begin{bmatrix} \frac{{T_{s}}^2}{2m}   \newline	\frac{T_{s}}{m} (1-\frac{b T_{s}}{2m})   \end{bmatrix} u[k]$$ 
 
 
-	\newline y [k]	= \begin{bmatrix} 	0  & 1 \end{bmatrix} \begin{bmatrix} 	x_1[k]  \newline	x_2[k] \end{bmatrix} 	\quad	\tag{9} $$
+	$$y [k]	= \begin{bmatrix} 	0  & 1 \end{bmatrix} \begin{bmatrix} 	x_1[k]  \newline	x_2[k] \end{bmatrix} 	\quad	\tag{9}$$
 
 
 
