@@ -7,7 +7,7 @@
 <b>Discipline | <b>Electrical Engineering 
 :--|:--|
 <b> Lab | <b> Digital Control Laboratory
-<b> Experiment|     <b> Design of digital control systems with deadbeat response and other controllers and Exp 9
+<b> Experiment|     <b> Design of Digital Control Systems with Deadbeat Response and Other Controllers and Exp 9
 
 ### About the Experiment 
 
