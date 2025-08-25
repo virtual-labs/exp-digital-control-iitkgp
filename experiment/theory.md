@@ -1,6 +1,7 @@
 # Theory
 
 Linear time invariant system may be represented in state space form by the following equations:
+
 State equation:
 
 $$ \dot{x}(t)=A x(t)+B u(t) \tag{1a} $$
@@ -12,7 +13,8 @@ $$ y(t)= C x(t) \tag{1b} $$
 <b><i>Deadbeat Control design:</i></b> <br>
 A deadbeat controller is one where the system's output reaches its desired value in the smallest number of steps (the so-called "deadbeat time" or "deadbeat response"). 
 This is achieved by designing the control law such that the poles of the closed-loop system lie at the origin. </br>
-The discrete-time state-space model with feedback can be written as:</br>
+The discrete-time state space model with feedback can be written as:</br>
+
 State equation:
 
 $$ {x}[k+1]=F x[k]+g u[k] \tag{2a} $$
@@ -25,11 +27,13 @@ where, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">x</s
 <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">u</span> is input or control vector, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">F</span> is system matrix, 
 <span style="font-style:italic;font-size:18px">g</span> is input matrix, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">C</span> is output matrix. </br></br>
 
-where, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">K</span> is the state feedback gain matrix, <span style="font-family:Sitka Text;font-style:italic">r</span>[<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">k</span>] is the reference signal. 
-</br>
+
 The control input is typically given by:
 
 $$ u[k] = - K x[k] + r[k] \tag{3} $$
+
+where, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">K</span> is the state feedback gain matrix, <span style="font-family:Sitka Text;font-style:italic">r</span>[<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">k</span>] is the reference signal. 
+</br>
 
 State feedback design for deadbeat response:</br>
 The goal of deadbeat control is to place the poles of the closed-loop system at the origin of the z-plane, i.e., all the eigenvalues of (<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">F</span> - <span style="font-style:italic;font-size:18px">g</span><span style="font-family:Bodoni MT;font-style:italic;font-size:18px">K</span>) should be at zero. This ensures the system reaches the equilibrium state (desired state) as quickly as possible.
@@ -41,6 +45,7 @@ Solve for <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">K
 • Trace of (<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">F</span> - <span style="font-style:italic;font-size:18px">g</span><span style="font-family:Bodoni MT;font-style:italic;font-size:18px">K</span>) = 0. </br></br>
 <b><i>State feedback design:</i></b> <br>
 A necessary and sufficient condition for arbitrary pole placement is that the pair (<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">F</span>, <span style="font-style:italic;font-size:18px">g</span>) must be controllable.<br/>
+
 Control input:
 
 $$ u[k]= - K x[k] \tag{4} $$
@@ -86,7 +91,7 @@ The system equation is:</br>
 $$ m\ddot{y} + b \dot{y} + k y = 0 \tag{7} $$
 
 <b><i>State Space form of the Mechanical system:</i></b> <br>
-The state-space form:</br>
+The State Space form:</br>
 
 <br/> Continuous State Space form:
 
