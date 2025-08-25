@@ -1060,7 +1060,7 @@ function CNTR(){
 			   
 			   //document.getElementById("Feedback_gain_Value_K").innerHTML=Kfb;
 			   
-			   document.getElementById('Feedback_gain_Value_Kc').innerHTML = ' Gain Values of State Feedback Kc =['+ kc1+',\t'+kc2+']';
+			   document.getElementById('Feedback_gain_Value_Kc').innerHTML = ' Gain Values of State Feedback K<sub>c</sub> =['+ kc1+',\t'+kc2+']';
 			   
 			   
 			   
