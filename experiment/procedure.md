@@ -65,7 +65,7 @@
 <b>Fig. 7. Run button to calculate the selected design </b>						  
 </div>
 
-8. Click on ' Enter the pole Location' button to enter the desired pole values for state feedback method. 
+8. Click on ' Enter the Pole Location' button to enter the desired pole values for state feedback method. 
 
 <div align="center">
 <img class="img-fluid"  src="./images/4_2.png" alt="">

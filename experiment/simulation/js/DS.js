@@ -77,10 +77,10 @@ function system(){
 			
 			
 			
-			document.getElementById('matA').innerHTML = ' A =['+ a11+',\t'+a12+';\t\t'+a21+','+a22+']';
-			document.getElementById('matB').innerHTML = ' B =['+ b1+';\t\t'+b2+']';
-			document.getElementById('matC').innerHTML = ' C =['+ c11+',\t'+c12+']';
-			document.getElementById('matD').innerHTML = ' D =['+ d11+']';
+			document.getElementById('matA').innerHTML = '<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">A</span> =['+ a11+',\t'+a12+';\t\t'+a21+','+a22+']';
+			document.getElementById('matB').innerHTML = '<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">B</span> =['+ b1+';\t\t'+b2+']';
+			document.getElementById('matC').innerHTML = '<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">C</span> =['+ c11+',\t'+c12+']';
+			document.getElementById('matD').innerHTML = '<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">D</span> =['+ d11+']';
 			
 			//outputText1=" G(s)= ["+b0+"s\u00B2+("+b1+")s+("+b2+ ")] / [" +a0+"s<sup>2</sup>+("+a1+")s+("+a2+ ")]";
 			
@@ -301,8 +301,8 @@ function DSSMS(){
 			var mg = math.matrix([[bd1], [bd2]]);
 			
 			
-			document.getElementById('matAd').innerHTML = ' F =['+ ad11+',\t'+ad12+';\t\t'+ad21+','+ad22+']';
-			document.getElementById('matBd').innerHTML = ' g =['+ bd1+';\t\t'+bd2+']';
+			document.getElementById('matAd').innerHTML = '<span style="font-family:Bodoni MT;font-style:italic;font-size:18px"> F</span> =['+ ad11+',\t'+ad12+';\t\t'+ad21+','+ad22+']';
+			document.getElementById('matBd').innerHTML = '<span style="font-family:Calibri;font-style:italic;font-size:18px"> g</span> =['+ bd1+';\t\t'+bd2+']';
 			
 			
 			
@@ -524,8 +524,8 @@ function DBR(){
 			var Faga= math.matrix([abd1,abd2]);
 			//var FaFaga= math.matrix([aabd1, aabd2, aabd3]);
 						
-			document.getElementById('matQcg').innerHTML = 'ga ='+ ga;
-			document.getElementById('matQcFg').innerHTML = ' Faga ='+ Faga;
+			document.getElementById('matQcg').innerHTML = '<span style="font-family:Calibri;font-style:italic;font-size:18px">g<sub>a</sub></span> ='+ ga;
+			document.getElementById('matQcFg').innerHTML = ' <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">F<sub>a</sub></span> <span style="font-family:Calibri;font-style:italic;font-size:18px">g<sub>a</sub></span> ='+ Faga;
 			//document.getElementById('matQcFFg').innerHTML = ' Fa<sup>2</sup>ga ='+ FaFaga;
 			
 			
@@ -535,7 +535,7 @@ function DBR(){
 			
 			var Qc= math.matrix([[bd1, abd1],[bd2, abd2]]);
 			
-			document.getElementById('matQc').innerHTML = ' Q<sub>c</sub> =['+ bd1+',\t'+abd1+';\t\t'+bd2+','+abd2+']'
+			document.getElementById('matQc').innerHTML = ' <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">Q<sub>c</sub></span> =['+ bd1+',\t'+abd1+';\t\t'+bd2+','+abd2+']'
 			
 			var DQc= math.divide(math.round(math.multiply(math.det(Qc),1000)),1000);
 			console.log(DQc);
@@ -543,8 +543,8 @@ function DBR(){
 			//DQc=0;
 			
 			if (DQc!=0)
-			{  Cntrl_Test1=" Rank of Q<sub>c</sub> = Order of A = n = 2";			   
-			   Cntrl_Test2="Determinent of Q<sub>c</sub> = " +DQc+ "";				    
+			{  Cntrl_Test1=" Rank is 2";			   
+			   Cntrl_Test2="Determinent is " +DQc+ "";				    
 			   Cntrl_Test3=" System is completely controllable";
 			   document.getElementById("Cntrl_Test1").innerHTML=Cntrl_Test1;
 			   document.getElementById("Cntrl_Test2").innerHTML=Cntrl_Test2;
@@ -654,8 +654,8 @@ function DBR(){
 			   
 			}
 			   else 
-			   {   Cntrl_Test1=" Rank of Q<sub>c</sub> < Order of A = n = 2";
-		           Cntrl_Test2="Determinent of Q<sub>c</sub> = " +DQc+ "";		
+			   {   Cntrl_Test1=" Rank <  n = 2";
+		           Cntrl_Test2="Determinent is " +DQc+ "";		
 			       Cntrl_Test3=" System is not controllable";
 			       document.getElementById("Cntrl_Test1").innerHTML=Cntrl_Test1;
 				   document.getElementById("Cntrl_Test2").innerHTML=Cntrl_Test2;
