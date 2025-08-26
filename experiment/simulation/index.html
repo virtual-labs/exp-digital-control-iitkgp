@@ -129,6 +129,7 @@
         
     </div><!--First Container under body tag end-->
     
+   
 	
     <div class="container p-3 my-5 text-left border"><!--3rd Container under body tag start-->
       <div class="row"><!--First row under 3rd container start-->
@@ -153,7 +154,7 @@
 					 
 					 <li> Click on the 'Run' button to run the selected design. </li><br/>
 					 
-					 <li> Click on ' Enter the pole Location' button to enter the desired pole values (in s domain) for state feedback method. </li><br/>
+					 <li> Click on ' Enter the Pole Location' button to enter the desired pole values (in s domain) for state feedback method. </li><br/>
 					 
 					 <li> Click on ' Desing' button to get the gain values for the state feedback method. </li><br/>
 
@@ -187,11 +188,11 @@
 			Enter the values of the following quantities: <br/><br/>
 			<!--<img class = "img-fluid" src="./images/Continuous_System.png" class="img-fluid" > <br/></br>-->
 			
-			<span style="position:absolute;left:40%">Mass :  m</span> <span style="position:absolute;left:47%;width:24%;text-align:center">= &nbsp;<input type="number" id="m1" min="0.1" value="0.5" max="1" step="0.05"  ></span><br/></br>
-			<span style="position:absolute;left:40%">Damping friction : b</span>   <span style="position:absolute;left:47%;width:24%;text-align:center">= &nbsp;<input type="number" id="B1" min="0.1" value="0.2" max="1" step="0.05" ></span><br/></br>
-			<span style="position:absolute;left:40%">Spring constant :  k</span>  <span style="position:absolute;left:47%;width:24%;text-align:center">= &nbsp;<input type="number" id="K1" min="0.01" value="0.1" max="1" step="0.01"  ></span><br/></br>
+			<span style="position:absolute;left:40%">Mass : <span style="font-family:Bodoni MT;font-style:italic;font-size:18px"> m</span></span> <span style="position:absolute;left:47%;width:24%;text-align:center">= &nbsp;<input type="number" id="m1" min="0.1" value="0.5" max="1" step="0.05"  ></span><br/></br>
+			<span style="position:absolute;left:40%">Damping friction : <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">b</span></span>   <span style="position:absolute;left:47%;width:24%;text-align:center">= &nbsp;<input type="number" id="B1" min="0.1" value="0.2" max="1" step="0.05" ></span><br/></br>
+			<span style="position:absolute;left:40%">Spring constant :  <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">k</span></span>  <span style="position:absolute;left:47%;width:24%;text-align:center">= &nbsp;<input type="number" id="K1" min="0.01" value="0.1" max="1" step="0.01"  ></span><br/></br>
 			
-			<span style="position:absolute;left:40%">Sampling Time (sec) :  Ts</span>  <span style="position:absolute;left:47%;width:24%;text-align:center">= &nbsp;<input type="number" id="Ts1" min="0.01" value="0.1" max="1" step="0.01"  ></span><br/></br>
+			<span style="position:absolute;left:40%">Sampling Time (sec) :  <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">T<sub>s</sub></span></span>  <span style="position:absolute;left:47%;width:24%;text-align:center">= &nbsp;<input type="number" id="Ts1" min="0.01" value="0.1" max="1" step="0.01"  ></span><br/></br>
            
 		 <!--  Length to pendulum center of mass : l (m) = &nbsp;<input type="number" id="l1" min="0.1" value="0.3" max="1" step="0.05" style="width:25%" ><br/></br>	
             Mass moment of inertia of the pendulum : I (kg.m^2) = &nbsp;<input type="number" id="I1" min="0.001" value="0.006" max="1" step="0.001" style="width:25%" ><br/></br>  -->
@@ -327,15 +328,15 @@
 			
 			$$ Q_c = [g_a, \ F_ag_a] $$
 			
-			<span class="card-text" id="matQcg" ></span><br/<br/>
-			<span class="card-text" id="matQcFg" ></span><br/<br/>
-			<span class="card-text" id="matQcFFg" ></span><br/<br/>
+			<span class="card-text" id="matQcg" ></span><br/><br/>
+			<span class="card-text" id="matQcFg" ></span><br/><br/>
+			<span class="card-text" id="matQcFFg" ></span><br/><br/>
 			
-			<span class="card-text" id="matQc" ></span><br/<br/>
+			<span class="card-text" id="matQc" ></span><br/><br/>
 			 
-			<button class="btn btn-success" onclick="showRank()">Rank of Qc</button>
+			<button class="btn btn-success" onclick="showRank()">Rank of <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">Q<sub>c</sub></span></button>
 				<span id="Cntrl_Test1" style="display:none"></span><br/><br/>
-			<button class="btn btn-success" onclick="showDetQc()">Determinant of Qc</button>
+			<button class="btn btn-success" onclick="showDetQc()">Determinant of <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">Q<sub>c</sub></span></button>
 			    <span id="Cntrl_Test2" style="display:none"></span><br/><br/>
 			<button class="btn btn-success" onclick="showinfo()">Inference</button>
 				<span id="Cntrl_Test3" style="display:none"></span><br/><br/>
@@ -404,7 +405,7 @@
 			<br/>	
 			
 			
-			<button class="btn btn-success" id ="runnew" onclick="EP()" style="visibility:hidden">Enter the desired pole location </button>				
+			<button class="btn btn-success" id ="runnew" onclick="EP()" style="visibility:hidden">Enter the Pole Location </button>				
 			
 			<div id="tfbodyadd2" class="card border-0" style="display:none; width:100%;background-color:none">
 			<br/><br/>
