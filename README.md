@@ -18,6 +18,7 @@ Essentially, the deadbeat controller is the inverse of the plant's transfer func
 <b><i>Deadbeat controller design using State Space model:</i></b> <br>
 Linear time invariant system may be represented in state space form by the following equations:
 </br>
+
 State equation:
 
 $$ \dot{x}(t)=A x(t)+B u(t) \tag{1a} $$
@@ -27,19 +28,20 @@ Output equation:
 $$ y(t)= C x(t) \tag{1b} $$
 
 </br>
+
 where, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">x</span>(<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">t</span>) is state vector, <span style="font-family:Sitka Text;font-style:italic">y</span>(<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">t</span>) is output vector, 
 <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">u</span> is input or control vector, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">A</span> is system matrix, 
 <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">B</span> is input matrix, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">C</span> is output matrix.</br></br>
 
-                
-Discrete state space form represented by the following equations </br>
+    
+Discrete state space form represented by the following equations: </br>
 State equation:
 
 $$ {x}[k+1]=F x[k]+g u[k] \tag{2a} $$
 
 Output equation:
 
-$$ y[k]= C x[k] \tag{2b} $$
+$$ y[k] = C x[k]\tag{2b} $$
 
 <div align="center">
 <img class="img-fluid"  src="experiment/images/F_g.png" alt=""><br>
@@ -50,9 +52,10 @@ $$ y[k]= C x[k] \tag{2b} $$
 <span style="font-style:italic;font-size:18px">g</span> is input matrix, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">C</span> is output matrix. </br></br>
 The control input is typically given by:</br>
 
-$$ u[k]= - K x[k] + r[k] \tag{3} $$
+$$ u[k] = - K x[k] + r[k] \tag{3} $$
 
 where, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">K</span> is the state feedback gain matrix, <span style="font-family:Sitka Text;font-style:italic">r</span>[<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">k</span>] is the reference signal. 
+
 
 
 <b>Subject matter expertise | <b> **Prof. Alok Kanti Deb**
