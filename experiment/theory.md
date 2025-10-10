@@ -125,7 +125,7 @@ where, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">m</s
 <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">u</span> is the external force. </br></br>
 The system equation is:</br>
 
-$$ m\ddot{y} + b \dot{y} + k y = 0 \tag{10} $$
+$$ m\ddot{y} + b \dot{y} + k y = u \tag{10} $$
 
 <b><i>State Space form of the Mechanical system:</i></b> <br>
 The State Space form:</br>
@@ -134,7 +134,7 @@ The State Space form:</br>
 
 $$	\begin{bmatrix} 	\dot{x}_1(t)  \newline	\dot{x}_2(t) \end{bmatrix}	= \begin{bmatrix} 	0  & 1 \newline	-\frac{k}{m}  & -\frac{b}{m} \end{bmatrix} \begin{bmatrix} 	x_1(t)  \newline	x_2(t) \end{bmatrix} + \begin{bmatrix} 0  \newline	\frac{1}{m} \end{bmatrix} u(t)	 $$
 
-$$	y(t)	= \begin{bmatrix} 	0  & 1 \end{bmatrix} \begin{bmatrix} 	x_1(t)  \newline	x_2(t) \end{bmatrix} 	\quad	\tag{11} $$
+$$	y(t)	= \begin{bmatrix} 	1  & 0 \end{bmatrix} \begin{bmatrix} 	x_1(t)  \newline	x_2(t) \end{bmatrix} 	\quad	\tag{11} $$
 
 where,
 <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">x<sub>1</sub></span> is the displacement, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">x<sub>2</sub></span> is the velocity, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">u(t)</span> is the external force, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">y(t)</span> is the output. 
@@ -143,7 +143,7 @@ where,
 
 $$	\begin{bmatrix} 	x_1 [k+1]  \newline	x_2 [k+1] \end{bmatrix}	= \begin{bmatrix} 	1  & T_{s} \newline	-\frac{k T_{s}}{m}  & 1-\frac{b T_{s}}{m}  \end{bmatrix} \begin{bmatrix} 	x_1 [k] \newline	x_2 [k] \end{bmatrix} + \begin{bmatrix} \frac{{T_{s}}^2}{2m}   \newline	\frac{T_{s}}{m} (1-\frac{b T_{s}}{2m})   \end{bmatrix} u[k]	$$ 
 
-$$	y [k]	= \begin{bmatrix} 	0  & 1 \end{bmatrix} \begin{bmatrix} 	x_1[k]  \newline	x_2[k] \end{bmatrix} 	\quad	\tag{12} $$
+$$	y [k]	= \begin{bmatrix} 	1  & 0 \end{bmatrix} \begin{bmatrix} 	x_1[k]  \newline	x_2[k] \end{bmatrix} 	\quad	\tag{12} $$
 
 
 
