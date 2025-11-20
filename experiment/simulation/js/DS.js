@@ -1449,7 +1449,9 @@ document.getElementById('chartContainer2').style.display  = "block";
 	data:[ 
       {        
         type: "line",
-		color:"109DB6",
+		color:"#ed2c4e",
+		showInLegend:true,
+		legendText:"(Sampling Time (Ts) = "+ Ts +")",
         dataPoints:dataOPPoints2
 	
        }]
@@ -1716,7 +1718,7 @@ document.getElementById('chartContainer1').style.display  = "block";
 	data:[ 
       {        
         type: "spline",
-		color:"#ed2c4e",
+		color:"109DB6",
         dataPoints:dataOPPoints3
 	
        }]
@@ -1756,8 +1758,11 @@ document.getElementById('chartContainer2').style.display  = "block";
 	data:[ 
       {        
         type: "spline",
-		color:"109DB6",
-        dataPoints:dataOPPoints4
+		color:"black",
+		showInLegend:true,
+		legendText:"(Sampling Time (Ts) = "+ Ts +")",
+		dataPoints:dataOPPoints4,
+		
 	
        }]
        
@@ -1818,14 +1823,14 @@ document.getElementById('chartContainer1').style.display  = "block";
 	data:[ 
       {        
         type: "line",
-		color:"black",
-        dataPoints:dArray1,
+		color:"red",
+		dataPoints:dArray1,
 		//showInLegend: true,
 		//legendText:"Deadbeat Response"	
        },
 	   {        
         type: "spline",
-		color:"red",
+		color:"black",
         dataPoints:dArray3,
 		//showInLegend: true,
 		//legendText:"State Feedback Response"	
@@ -1876,18 +1881,18 @@ document.getElementById('chartContainer2').style.display  = "block";
 	data:[ 
       {        
         type: "line",
-		color:"black",
+		color:"red",
         dataPoints:dArray2,
 		showInLegend: true,
-		legendText:"Deadbeat Response"
+		legendText:"Deadbeat Response:(Sampling Time (Ts) = "+ Ts +")",
 	
        },
 	   {        
         type: "spline",
-		color:"red",
+		color:"black",
         dataPoints:dArray4,
 		showInLegend: true,
-		legendText:"State Feedback Response"	
+		legendText:"State Feedback Response:(Sampling Time (Ts) = "+ Ts +")",		
        },
 	   
 	   
