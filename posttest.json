@@ -1,0 +1,62 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Q1. Which of the following methods is useful for achieving a deadbeat response using state feedback?",
+      "answers": {
+        "a": "Kalman filtering",
+        "b": "Pole placement",
+        "c": "Bode plot analysis",
+        "d": "Nyquist criterion"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Q2. What is the relationship between state feedback and system controllability?",
+      "answers": {
+        "a": "The system must be controllable to achieve a deadbeat response",
+        "b": "The system does not need to be controllable for deadbeat response",
+        "c": "Controllability is only required for steady-state performance",
+        "d": "Controllability is unrelated to state feedback control"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Q3. A discrete time system has the transfer function <img src=./images/poq3.png>. What is the pole location of this system?",
+      "answers": {
+        "a": "-0.5",
+        "b": "1",
+        "c": "-1",
+        "d": "0.5"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Q4. For a discrete time system, the characteristic equation is <img src=./images/poq4.png> . What are the poles of this system?",
+      "answers": {
+        "a": "1,0.8",
+        "b": "1,-0.9",
+        "c": "0.9,0.9",
+        "d": "1.8,0.81"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Q5. For a discrete time system with the transfer function <img src=./images/poq5.png> . What are the poles of this system?",
+      "answers": {
+        "a": "1,0.6",
+        "b": "-1.6,0.64",
+        "c": "0.8,-0.8",
+        "d": "0.8,0.8"
+        
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    }
+    
+  ]
+}
