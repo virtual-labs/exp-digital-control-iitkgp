@@ -60,7 +60,7 @@ $$ y[k] = C x[k] \tag{5b} $$
 
 where, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">x</span>[<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">k</span>] is state vector, <span style="font-family:Sitka Text;font-style:italic">y</span>[<span style="font-family:Bodoni MT;font-style:italic;font-size:18px">k</span>] is output vector, 
 <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">u</span> is input or control vector, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">F</span> is system matrix, 
-<span style="font-style:italic;font-size:18px">g</span> is input matrix, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">C</span> is output matrix. </br></br>
+<span style="font-style:italic;font-size:18px">g</span> is input matrix, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">C</span> is output matrix, <span style="font-family:Bodoni MT;font-style:italic;font-size:18px">T<sub>s</sub></span> is the sampling time.</br></br>
 
 
 The control input is typically given by:</br>
